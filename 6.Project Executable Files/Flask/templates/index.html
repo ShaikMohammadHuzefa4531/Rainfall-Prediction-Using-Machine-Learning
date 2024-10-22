@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall prediction App</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <nav class="navbar  bg-body-light border-bottom sticky-top">
+
+        <div class="title container-fluid"> <i class="fa-solid fa-cloud-sun-rain icon"></i> <h3 style="color: white;" class="mx-auto">Rainfall Prediction app</h3> </div>
+            
+    </nav>
+    <div class="row mt-3">
+        <div class="col-8 offset-2">   
+        <br><br> 
+        <h3>Fill the details according to your location</h3>
+            <form action="/predict" method="post">
+            <i class="fa-solid fa-droplet text-success"></i>
+            <div class="mb-3">
+                <label for="Humidity3pm" class="form-label fw-bold text-warning">Humidity at 3pm</label>
+                <input name="Humidity3pm" placeholder="Add the Humidity,(Humidity around 3pm is preferred)" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-cloud-rain text-success"></i>
+            <div class="mb-3">
+                <label for="Rainfall" class="form-label fw-bold text-warning">Rainfall</label>
+                <input name="Rainfall" placeholder="Add the amount of Rainfall recorded" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-cloud text-success"></i>
+            <div class="mb-3">
+                <label for="Cloud3pm" class="form-label fw-bold text-warning">Clouds at 3pm</label>
+                <input name="Cloud3pm" placeholder="Add information about clouds (around 3pm would be preferred)" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-droplet text-success"></i>
+            <div class="mb-3">
+                <label for="Humidity9am" class="form-label fw-bold text-warning">Humidity at 9am</label>
+                <input name="Humidity9am" placeholder="Add the Humidity,(Humidity around 9am)" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-cloud text-success"></i>
+            <div class="mb-3">
+                <label for="Cloud9am" class="form-label fw-bold text-warning">Clouds at 9am</label>
+                <input name="Cloud9am" placeholder="Add information about clouds" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-wind text-success"></i>
+            <div class="mb-3">
+                <label for="WindGustSpeed" class="form-label fw-bold text-warning">Wind Gust Speed</label>
+                <input name="WindGustSpeed" placeholder="Add Wind Gust Speed" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            
+            <i class="fa-solid fa-wind text-success"></i>
+            <div class="mb-3">
+                <label for="WindSpeed9am" class="form-label fw-bold text-warning">Wind Speed at 9am</label>
+                <input name="WindSpeed9am" placeholder="Add WindSpeed at 9am" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-temperature-low text-success"></i>
+            <div class="mb-3">
+                <label for="MinTemp" class="form-label fw-bold text-warning">Minimum Temperature</label>
+                <input name="MinTemp" placeholder="Add Minimum Temperature of the day" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-wind text-success"></i>
+            <div class="mb-3">
+                <label for="WindSpeed3pm" class="form-label fw-bold text-warning">Wind Speed at 3pm</label>
+                <input name="WindSpeed3pm" placeholder="Add Wind Speed at 3pm" type="text" class="form-control" required>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+            
+            <i class="fa-solid fa-wind text-success"></i>
+            <div class="mb-3">
+                <label for="WindGustDir" class="form-label fw-bold text-warning">Wind Gust Direction</label>
+                <select name="WindGustDir">
+                    <option value="0">E</option>
+                    <option value="1">ENE</option>
+                    <option value="2">ESE</option>
+                    <option value="3">N</option>
+                    <option value="4">NE</option>
+                    <option value="5">NNE</option>
+                    <option value="6">NNW</option>
+                    <option value="7">NW</option>
+                    <option value="8">S</option>
+                    <option value="9">SE</option>
+                    <option value="10">SSE</option>
+                    <option value="11">SSW</option>
+                    <option value="12">SW</option>
+                    <option value="13">W</option>
+                    <option value="14">WNW</option>
+                    <option value="15">WSW</option>
+                </select>
+                <div class="valid-feedback">Title looks good</div>
+            </div>
+                
+            
+            
+            <button class="btn btn-danger add-btn mt-3 fw-bold text-white">Predict</button>
+            </form>
+        </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        
+</body>
+</html>
