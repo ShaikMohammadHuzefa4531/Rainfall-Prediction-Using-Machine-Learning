@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+<head>
+    <title>Task List</title>
+</head>
+<body>
+    <h1>Task List</h1>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task[1] }} - {% if task[2] == 0 %}Incomplete{% else %}Complete{% endif %}
+            <a href="/update/{{ task[0] }}">Edit</a>
+            <form action="/delete/{{ task[0] }}" method="post" style="display:inline;">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="/create">Create New Task</a>
+</body>
+</html>
